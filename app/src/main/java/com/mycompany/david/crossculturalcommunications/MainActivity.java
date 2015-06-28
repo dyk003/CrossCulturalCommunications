@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         myWebView.loadUrl("https://secure.crossculturalcom.us/ip/");
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setBuiltInZoomControls(true);
      //   myWebView.setWebViewClient(new WebViewClient());
         myWebView.setWebViewClient(new MyWebViewClient());
 
