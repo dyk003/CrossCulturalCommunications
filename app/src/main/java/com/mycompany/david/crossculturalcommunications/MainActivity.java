@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,9 +16,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(Intent.ACTION_VIEW,
-                Uri.parse("https://secure.crossculturalcom.us/ip/"));
-        startActivity(intent);
+        WebView myWebView = (WebView) findViewById(R.id.webview);
+        myWebView.loadUrl("https://secure.crossculturalcom.us/ip/");
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
     }
 
     @Override
