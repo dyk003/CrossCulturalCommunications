@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setBuiltInZoomControls(true);
      //   myWebView.setWebViewClient(new WebViewClient());
         myWebView.setWebViewClient(new MyWebViewClient());
-
     }
 
     @Override
@@ -61,6 +61,19 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            view.loadUrl("javascript:document.getElementsByName('username')[0].value="+"2201"+";");
+            view.loadUrl("javascript:document.getElementsByName('password')[0].value="+"6232038"+";");
+            view.loadUrl("javascript:document.getElementsByName('password')[0].focus();");
+        //    view.loadUrl("javascript:document.getElementsByName('login')[0].click();");
+        //    String username = "2201";
+        //    String javascript="javascript:document.getElementByName('username')[0].value='"+username+"';";
+        //    String javascript="javascript:document.getElementByName('username')[0].focus();";
+        //    view.loadUrl(javascript);
+        }
+
     }
 
 }
