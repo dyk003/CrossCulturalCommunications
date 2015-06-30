@@ -64,14 +64,16 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onPageFinished(WebView view, String url) {
-            view.loadUrl("javascript:document.getElementsByName('username')[0].value="+"2201"+";");
-            view.loadUrl("javascript:document.getElementsByName('password')[0].value="+"6232038"+";");
-            view.loadUrl("javascript:document.getElementsByName('password')[0].focus();");
-        //    view.loadUrl("javascript:document.getElementsByName('login')[0].click();");
-        //    String username = "2201";
-        //    String javascript="javascript:document.getElementByName('username')[0].value='"+username+"';";
-        //    String javascript="javascript:document.getElementByName('username')[0].focus();";
-        //    view.loadUrl(javascript);
+            int username = 2201;
+            int password = 6232038;
+            view.loadUrl("javascript:document.getElementsByName('username')[0].value="+username+";");
+          //  view.loadUrl("javascript:document.getElementsByName('password')[0].value="+password+";");
+          //  view.loadUrl("javascript:document.getElementsByName('password')[0].focus();");
+            view.loadUrl("javascript:document.forms.login_frm.password.value="+password+";");
+            view.loadUrl("javascript:document.forms.login_frm.password.focus();");
+ //           view.loadUrl("javascript:document.getElementsByName('login_frm')[0].submit();");
+
+
         }
 
     }
